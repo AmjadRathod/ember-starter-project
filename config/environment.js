@@ -31,9 +31,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV.serverURL = "http://localhost:3000";
+    ENV.serverURL = "https://expert-advi.herokuapp.com/";
     ENV.webURL = "http://localhost:4200";
-    ENV.webSocketURL = "ws://localhost:3000/cable";
+    ENV.webSocketURL = "ws://https://expert-advi.herokuapp.com/cable";
   }
 
   if (environment === "test") {
@@ -49,7 +49,9 @@ module.exports = function(environment) {
   }
 
   if (environment === "production") {
-    // here you can enable a production-specific feature
+    ENV.serverURL = "https://expert-advi.herokuapp.com/";
+    ENV.webURL = "https://expert-advice.netlify.com";
+    ENV.webSocketURL = "ws://https://expert-advi.herokuapp.com/cable";
   }
 
   ENV.apiBaseURL = ENV.serverURL + "/" + ENV.apiNamespace;
